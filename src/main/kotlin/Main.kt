@@ -1,6 +1,6 @@
 package ru.loseex
 
-import ru.loseex.cmd.CmdBuilder
+import ru.loseex.core.Core
 
 /**
  * ## Игра Ассемблер
@@ -9,15 +9,5 @@ import ru.loseex.cmd.CmdBuilder
  * */
 
 fun main() {
-  val cmdBuilder = CmdBuilder();
-
-  cmdBuilder.add("add", "Add command", function = fun () {
-    println("1")
-  })
-
-  cmdBuilder.add("remove", "Remove command", function = fun () {
-    println("2")
-  })
-
-  cmdBuilder.print();
+  Core.start();
 }
