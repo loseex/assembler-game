@@ -11,10 +11,23 @@ import kotlin.system.exitProcess
 class Core {
   companion object {
     public fun start(): Unit {
-      println("Hello world!");
+      try {
+        println("Hello world!");
+      } catch (err: RuntimeException) {
+        this.exit(err.message);
+      }
     }
 
-    public fun exit(): Unit {
+    /**
+     * ### Exit process.
+     *
+     * Метод который завершает работу программы.
+     *
+     * @param reason { String? }
+     * */
+
+    private fun exit(reason: String?): Unit {
+      if (reason != null) throw Exception(reason);
       exitProcess(-1);
     }
   }
